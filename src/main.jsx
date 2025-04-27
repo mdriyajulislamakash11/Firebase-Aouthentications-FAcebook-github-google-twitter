@@ -9,6 +9,7 @@ import Contacts from "./Components/Contacts.jsx";
 import About from "./Components/About.jsx";
 import Login from "./Components/Login.jsx";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
         element: <Contacts />,
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login />
       }
     ],
