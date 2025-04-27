@@ -1,5 +1,6 @@
 import {
   FacebookAuthProvider,
+  GithubAuthProvider,
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
@@ -54,8 +55,19 @@ const Login = () => {
       });
   };
 
-  
-  const handleGithub = () => {};
+// Github Login
+const providerwithGithub = new GithubAuthProvider();
+  const handleGithub = () => {
+    signInWithPopup(auth, providerwithGithub)
+    .then((result) => {
+        console.log(result.user)
+        setUser(result.user)
+    })
+    .catch((error) => {
+        console.log(error)
+        setUser(null)
+    })
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -65,7 +77,7 @@ const Login = () => {
         <div className="my-6 text-center text-gray-500">or login with</div>
 
         {user ? (
-          <button onClick={handleSignOut}>Sign Out</button>
+          <button className="btn btn-primary" onClick={handleSignOut}>Sign Out</button>
         ) : (
           <div className="flex flex-col gap-3">
             <button
