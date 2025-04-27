@@ -26,18 +26,54 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contct">Contact-Us</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "text-primary" : "")}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "text-primary" : "")}
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? "text-primary" : "")}
+            >
+              Contact-Us
+            </NavLink>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Aouthes</a>
+        <Link to="/" className="btn btn-ghost text-xl">Aouthes</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <NavLink className="mr-4" to="/">Home</NavLink>
-          <NavLink className="mr-4" to="/about">About</NavLink>
-          <NavLink className="mr-4" to="/contact">Contact-Us</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-primary mr-4" : "mr-4"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "text-primary mr-4" : "mr-4"
+            }
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "text-primary mr-4" : "mr-4"
+            }
+          >
+            Contact-Us
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end">
